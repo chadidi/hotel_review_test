@@ -19,6 +19,25 @@ class ReviewRepository extends ServiceEntityRepository
         parent::__construct($registry, Review::class);
     }
 
+    /**
+     * Get random entities
+     *
+     * @param int $count Entities count, default is 10
+     *
+     * @return array
+     */
+    public function getRandomEntity(int $hotelId): ?Review
+    {
+        return  $this->createQueryBuilder('r')
+            ->andWhere('r.hotel = :hotel')
+            ->setParameter('hotel', $hotelId)
+            ->addSelect('RAND() as HIDDEN rand')
+            ->addOrderBy('rand')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+
     // /**
     //  * @return Review[] Returns an array of Review objects
     //  */
