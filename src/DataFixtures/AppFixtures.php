@@ -14,14 +14,20 @@ class AppFixtures extends Fixture
     {
         $faker = Factory::create();
 
+        $hotels = [];
         for ($i = 0; $i < 5; $i++) {
             $hotel = new Hotel();
             $hotel->setName($faker->company);
             $hotel->setCreatedAt($created_at = $faker->dateTime('-1 month'));
+            
             $manager->persist($hotel);
+
+            array_push($hotels, $hotel);
+        }
+
+        foreach ($hotels as $hotel) {
             for ($i = 0; $i < 7; $i++) {
                 $review = new Review();
-                // $review->setHotelId($hotel->getId());
                 $review->setTitle($faker->sentence);
                 $review->setBody($faker->text(500));
                 $review->setRating($faker->randomFloat(2, 0, 5));
