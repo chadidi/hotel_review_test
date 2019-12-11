@@ -35,8 +35,6 @@ class HotelController extends AbstractController
             ], Response::HTTP_NOT_FOUND);
         }
 
-        $count = $hotel->getReviews()->count();
-        // dd($count);
         $today_review = $this->reviewRepository->getRandomEntity($hotelId)->toArray();
 
         return new JsonResponse([
