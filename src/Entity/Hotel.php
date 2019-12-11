@@ -97,4 +97,13 @@ class Hotel
 
         return $this;
     }
+    
+    public function toArray()
+    {
+        return [
+            'id' => $this->getId(),
+            'name' => $this->getName(),
+            'created_at' => $this->getCreatedAt()
+        ];
+    }
 }

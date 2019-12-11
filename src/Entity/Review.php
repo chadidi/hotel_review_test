@@ -106,4 +106,15 @@ class Review
 
         return $this;
     }
+
+    public function toArray()
+    {
+        return [
+            'id' => $this->getId(),
+            'title' => $this->getTitle(),
+            'body' => $this->getBody(),
+            'rating' => $this->getRating(),
+            'created_at' => $this->getCreatedAt()
+        ];
+    }
 }
