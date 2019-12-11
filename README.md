@@ -1,6 +1,6 @@
 # Installation
 
-```
+```shell
 git clone https://github.com/chadidi/hotel_review_test.git
 cd hotel_review_test
 composer install
