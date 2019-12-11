@@ -8,8 +8,9 @@ To use it in his landing page.
 ```shell
 git clone https://github.com/chadidi/hotel_review_test.git
 cd hotel_review_test
-composer install
+cp .env.example .env
 # setup you database connection
+composer install
 php bin/console doctrine:migrations:migrate
 php bin/console doctrine:fixtures:load // seed data
 
