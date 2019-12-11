@@ -1,4 +1,9 @@
-# Installation
+# Introduction
+
+Our customer now can call the endpoint bellow to retrieve random review for a given hotel.
+To use it in his landing page.
+
+## Installation
 
 ```shell
 git clone https://github.com/chadidi/hotel_review_test.git
