@@ -22,7 +22,7 @@ class ReviewRepository extends ServiceEntityRepository
     /**
      * Get random entities
      *
-     * @param int $count Entities count, default is 10
+     * @param int $hotelId
      *
      * @return array
      */
